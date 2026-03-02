@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Configurações Face ID</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f9; color: #333; padding: 20px; }
+    .container { max-width: 750px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; }
+    
+    header { background: #6e41e2; color: white; padding: 25px; text-align: center; }
+    header h1 { margin: 0; font-size: 24px; }
+    
+    .logo-container {
+      text-align: center;
+      padding: 20px 0 0 0;
+      background: #6e41e2;
+    }
+    .brand-logo {
+      max-width: 120px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .cliente-box { background-color: #f0f7ff; border-bottom: 2px solid #e0eaf5; padding: 30px; }
+    .cliente-box h2 { color: #4a90e2; margin-top: 0; font-size: 1.3em; margin-bottom: 20px; }
+
+    form { padding: 30px; }
+    .form-section-title { color: #6e41e2; border-left: 5px solid #6e41e2; padding-left: 10px; margin: 30px 0 20px; font-size: 1.2em; }
+    
+    label { font-weight: 600; display: block; margin: 20px 0 8px; position: relative; }
+    
+    .info-i { 
+      display: inline-block; 
+      width: 18px; 
+      height: 18px; 
+      background: #6e41e2; 
+      color: white; 
+      border-radius: 50%; 
+      text-align: center; 
+      font-size: 12px; 
+      line-height: 18px; 
+      cursor: help; 
+      margin-left: 8px; 
+      vertical-align: middle; 
+    }
+    .info-i:hover::after { 
+      content: attr(data-tip); 
+      position: absolute; 
+      background: #333; 
+      color: #fff; 
+      padding: 10px; 
+      border-radius: 6px; 
+      font-weight: normal; 
+      font-size: 12px; 
+      width: 250px; 
+      z-index: 100; 
+      left: 30px; 
+      top: -5px; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    }
+
+    input[type="text"], input[type="email"], input[type="url"], textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 15px; }
+    textarea { resize: vertical; min-height: 80px; }
+    
+    .group { background: #f9f9f9; padding: 15px; border-radius: 6px; border: 1px solid #eee; margin-top: 5px; }
+    .group label { font-weight: normal; display: inline-block; margin: 5px 20px 5px 0; cursor: pointer; }
+
+    .drive-section { background-color: #eef9f5; border: 1px solid #c2eadd; padding: 20px; border-radius: 6px; margin-top: 30px; }
+    .drive-section label { color: #2d8a68; margin-top: 0; }
+
+    button { background: #6e41e2; color: white; border: none; padding: 18px; border-radius: 6px; width: 100%; cursor: pointer; font-size: 18px; font-weight: bold; margin-top: 30px; transition: 0.3s; }
+    button:hover { background: #5a32c0; transform: translateY(-2px); }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo-container">
+    <img src="https://i.pinimg.com/736x/63/47/ce/6347ce3d2af30869563b274f6606358b.jpg" alt="Logo" class="brand-logo">
+  </div>
+
+  <header>
+    <h1>Formulário de Funcionalidades Face ID</h1>
+  </header>
+
+  <form id="faceIdForm">
+    <div class="cliente-box">
+      <h2>👤 Dados do Cliente</h2>
+      <label>Nome do cliente <span class="info-i" data-tip="Nome completo da empresa ou pessoa responsável.">i</span></label>
+      <input type="text" name="clienteNome" placeholder="Digite o nome completo" required>
+      
+      <label>E-mail <span class="info-i" data-tip="Endereço de e-mail para envio da confirmação das configurações.">i</span></label>
+      <input type="email" name="clienteEmail" placeholder="email@exemplo.com.br" required>
+    </div>
+
+    <div class="form-section-title">Configurações Gerais</div>
+
+    <label>Tem um nome padrão? <span class="info-i" data-tip="Nome que será exibido na tela de repouso do dispositivo.">i</span></label>
+    <input type="text" name="nome_padrao">
+
+    <label>Qual idioma? <span class="info-i" data-tip="Define o idioma dos menus e das orientações por voz.">i</span></label>
+    <input type="text" name="idioma" placeholder="Ex: Português (Brasil)">
+
+    <label>Senha padrão? <span class="info-i" data-tip="Senha administrativa para acessar as configurações locais do equipamento.">i</span></label>
+    <input type="text" name="senha_padrao">
+
+    <label>Formas de acesso <span class="info-i" data-tip="Métodos permitidos para identificação e liberação da trava.">i</span></label>
+    <div class="group">
+      <label><input type="radio" name="acesso" value="QR Code"> QR Code</label>
+      <label><input type="radio" name="acesso" value="Cartão"> Cartão</label>
+      <label><input type="radio" name="acesso" value="Face"> Face</label>
+    </div>
+
+    <label>Modo de autenticação <span class="info-i" data-tip="'Manual' exige interação; 'Ligado direto' autentica assim que detecta o rosto.">i</span></label>
+    <div class="group">
+      <label><input type="radio" name="autenticacao" value="Manual"> Manual</label>
+      <label><input type="radio" name="autenticacao" value="Ligado direto"> Ligado direto</label>
+    </div>
+
+    <label>Mais configurações de autenticação <span class="info-i" data-tip="Descreva detalhes específicos de tempo ou regras de validação.">i</span></label>
+    <textarea name="config_autenticacao" placeholder="Descreva aqui..."></textarea>
+
+    <div class="form-section-title">Recursos Específicos</div>
+
+    <label>Precisa de serviço noturno? <span class="info-i" data-tip="Ativa a luz infravermelha para locais com pouca iluminação.">i</span></label>
+    <div class="group">
+      <label><input type="radio" name="servico_noturno" value="Sim"> Sim</label>
+      <label><input type="radio" name="servico_noturno" value="Não"> Não</label>
+    </div>
+
+    <label>Vai ter áudio específico? <span class="info-i" data-tip="Sons personalizados para boas-vindas ou avisos.">i</span></label>
+    <div class="group">
+      <label><input type="radio" name="audio" value="Sim"> Sim</label>
+      <label><input type="radio" name="audio" value="Não"> Não</label>
+    </div>
+    
+    <label>Precisa de texto específico? <span class="info-i" data-tip="Mensagem personalizada que aparecerá escrita na tela do dispositivo.">i</span></label>
+    <textarea name="texto_especifico" placeholder="Digite aqui o texto que deve aparecer na tela..."></textarea>
+
+    <label>Imagem de fundo específica? <span class="info-i" data-tip="Uso de papel de parede (wallpaper) personalizado.">i</span></label>
+    <div class="group">
+      <label><input type="radio" name="imagem" value="Sim"> Sim</label>
+      <label><input type="radio" name="imagem" value="Não"> Não</label>
+    </div>
+
+    <label>Detecção de passagem de pessoas <span class="info-i" data-tip="Ativa o sensor para confirmar se a pessoa passou pelo portão/catraca.">i</span></label>
+    <div class="group">
+      <label><input type="radio" name="deteccao" value="Sim"> Sim</label>
+      <label><input type="radio" name="deteccao" value="Não"> Não</label>
+    </div>
+
+    <label>Precisa de ajuste de imagem? <span class="info-i" data-tip="Calibração manual de cores e brilho da câmera.">i</span></label>
+    <div class="group">
+      <label><input type="checkbox" name="ajustes" value="Brilho"> Brilho</label>
+      <label><input type="checkbox" name="ajustes" value="Contraste"> Contraste</label>
+      <label><input type="checkbox" name="ajustes" value="Saturação"> Saturação</label>
+      <label><input type="checkbox" name="ajustes" value="Nitidez"> Nitidez</label>
+    </div>
+
+    <div class="drive-section">
+      <label>Link do Drive (arquivos) <span class="info-i" data-tip="Link da pasta com as artes, logos ou áudios que serão usados.">i</span></label>
+      <input type="url" name="link_drive" placeholder="https://drive.google.com/...">
+    </div>
+
+    <button type="submit" id="btnSubmit">Enviar Configurações</button>
+  </form>
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/a/macros/rioservice.com/s/AKfycbwyRZPFVuDvp-eiOghycfWnUjIb4eqD5NteEDXGiSyGsQ4fug6UblX8mcHGTJiDeZTo/exec';
+  const form = document.getElementById('faceIdForm');
+  const btn = document.getElementById('btnSubmit');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.innerText = 'Enviando...';
+
+    const formData = new FormData(form);
+    
+    const checkboxes = document.querySelectorAll('input[name="ajustes"]:checked');
+    let ajustesValues = [];
+    checkboxes.forEach((checkbox) => { ajustesValues.push(checkbox.value); });
+    formData.set('ajustes', ajustesValues.join(', '));
+
+    fetch(scriptURL, { 
+      method: 'POST', 
+      mode: 'no-cors',
+      body: new URLSearchParams(formData) 
+    })
+    .then(() => {
+      alert('Configurações enviadas com sucesso!');
+      form.reset();
+      btn.disabled = false;
+      btn.innerText = 'Enviar Configurações';
+    })
+    .catch(error => {
+      console.error('Erro:', error);
+      alert('Houve um erro técnico. Tente novamente.');
+      btn.disabled = false;
+      btn.innerText = 'Enviar Configurações';
+    });
+  });
+</script>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
